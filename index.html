@@ -87,6 +87,10 @@ h2.sec{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--
 .toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--g900);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:50;max-width:90vw;text-align:center}
 .toast.show{opacity:1}
 footer{max-width:760px;margin:10px auto 0;padding:0 16px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--g500)}
+.thumb{width:64px;height:64px;object-fit:contain;background:#fff;border:1px solid var(--g200);border-radius:10px;flex:none}
+.photo{text-align:center;margin:0 0 14px}
+.photo img{width:100%;max-width:260px;height:auto;aspect-ratio:1/1;object-fit:contain;background:#fff;border:1px solid var(--g200);border-radius:12px}
+.photo .cap{font-size:12px;color:var(--g500);margin-top:4px}
 .hidden{display:none!important}
 </style>
 </head>
@@ -156,7 +160,8 @@ footer{max-width:760px;margin:10px auto 0;padding:0 16px 16px;display:flex;justi
 <div class="toast" id="toast"></div>
 <footer><span>Riverhawk Industrial Supply · internal order form · <span id="ver"></span></span><span>More than just a supplier.</span></footer>
 <script>
-const APP_VERSION = 'v1.0';
+const APP_VERSION = 'v1.1';
+const IMG = (f,w) => `https://tscstatic.shopmadden.com/ProductImages/${f}_${w}x.jpg`;
 const SEASON = '2026 Fall';
 const SB_URL = 'https://yxejpzbsbwfovpumpjlw.supabase.co/rest/v1/apo_orders';
 const SB_KEY = 'sb_publishable_TXRcm05g4VHVX2Zews28hA_8D4L3HED';
@@ -165,21 +170,21 @@ const S = (a,b) => { const all=['XS','S','M','L','XL','2XL','3XL','4XL','5XL','6
 
 // sku = Shop Madden catalog SKU
 const PRODUCTS = [
- {sku:'52832',cat:'Women',name:"Women's Heather Microfleece Full-Zip Jacket",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Black Charcoal Heather','#4a4646'],['Light Royal Heather','#4169E1'],['Pearl Grey Heather','#9a9a9a']]},
- {sku:'65272',cat:'Women',name:"Women's Collective Insulated Vest",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Deep Black','#000000'],['Graphite','#676B6E'],['White','#FFFFFF']]},
- {sku:'62945',cat:'Women',name:"Women's Zone Performance Quarter-Zip",brand:'Team 365',sizes:S('XS','3XL'),colors:[['Black','#000000'],['Sport Graphite','#878B8F'],['Sport Light Blue','#05C5F5'],['Sport Royal','#4C71B5'],['Sport Dark Navy','#003f77'],['Sport Orange','#F9430A']]},
- {sku:'67212',cat:'Women',name:"Women's Micropique Sport-Wick Polo",brand:'Sport-Tek',sizes:S('XS','4XL'),colors:[['Black','#000000'],['True Royal','#0038a8'],['Deep Orange','#FA6908'],['Purple','#4f0093'],['Iron Grey','#3F4249']]},
- {sku:'74377',cat:'Women',name:"Women's CVC Relaxed T-Shirt",brand:'Next Level',sizes:S('XS','3XL'),colors:[['Black','#000000'],['White','#FFFFFF'],['Charcoal','#615B5B']]},
- {sku:'52679',cat:'Men',name:"Men's Digi Stripe Fleece Jacket",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Black','#000000'],['Grey','#929397'],['Navy','#1f2a44']]},
- {sku:'65294',cat:'Men',name:"Men's Collective Insulated Vest",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Deep Black','#000000'],['Graphite','#676B6E'],['Gusty Grey','#A4ADB2']]},
- {sku:'62944',cat:'Men',name:"Men's Zone Performance Quarter-Zip",brand:'Team 365',sizes:S('XS','4XL'),colors:[['Black','#000000'],['Sport Graphite','#878B8F'],['Sport Light Blue','#05C5F5'],['Sport Royal','#4C71B5'],['Sport Dark Navy','#003f77'],['Sport Orange','#F9430A']]},
- {sku:'52606',cat:'Men',name:"Men's Micropique Sport-Wick Polo",brand:'Sport-Tek',sizes:S('XS','6XL'),colors:[['Black','#000000'],['True Royal','#4169E1'],['Deep Orange','#E36630'],['Purple','#4B0082'],['Iron Grey','#3F4249']]},
- {sku:'72344',cat:'Unisex',name:'Bahama Performance Hooded Long Sleeve T-Shirt',brand:'Paragon',sizes:S('XS','4XL'),colors:[['Black','#000000'],['Navy','#1f2a5c'],['Graphite','#676B6E'],['Neon Orange','#FF6149'],['Safety Green','#C6F000'],['Blue Mist','#99d6dd'],['Royal','#4169E1']]},
- {sku:'52615',cat:'Unisex',name:'Core Fleece Pullover Hooded Sweatshirt',brand:'Port & Company',sizes:S('S','4XL'),colors:[['Jet Black','#030000'],['Orange','#FF8C24'],['Navy','#000080'],['True Royal','#1624C4'],['Medium Grey','#929397']]},
- {sku:'66855',cat:'Unisex',name:'Fan Favorite Fleece Crewneck Sweatshirt',brand:'Port & Company',sizes:S('XS','4XL'),colors:[['Charcoal','#615B5B'],['Jet Black','#000000'],['Team Navy','#244879'],['True Royal','#0000FF']]},
- {sku:'68115',cat:'Unisex',name:'Essential Rain Jacket',brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Deep Black','#000000'],['Graphite','#676B6E'],['True Navy','#002868']]},
- {sku:'75798',cat:'Unisex',name:'Capital Long Sleeve Performance T-Shirt',brand:'CORE365',sizes:S('XS','6XL'),colors:[['Black','#000000'],['Classic Navy','#244879'],['True Royal','#314DC4'],['Carbon','#797D83']]},
- {sku:'75797',cat:'Unisex',name:'Capital Performance T-Shirt',brand:'CORE365',sizes:S('XS','6XL'),colors:[['Black','#000000'],['Classic Navy','#244879'],['True Royal','#314DC4'],['Campus Orange','#E36630'],['Carbon','#797D83']]}
+ {sku:'52832',img:'Asi335177579',cat:'Women',name:"Women's Heather Microfleece Full-Zip Jacket",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Black Charcoal Heather','#4a4646'],['Light Royal Heather','#4169E1'],['Pearl Grey Heather','#9a9a9a']]},
+ {sku:'65272',img:'Asi308327580',cat:'Women',name:"Women's Collective Insulated Vest",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Deep Black','#000000'],['Graphite','#676B6E'],['White','#FFFFFF']]},
+ {sku:'62945',img:'Asi335668931',cat:'Women',name:"Women's Zone Performance Quarter-Zip",brand:'Team 365',sizes:S('XS','3XL'),colors:[['Black','#000000'],['Sport Graphite','#878B8F'],['Sport Light Blue','#05C5F5'],['Sport Royal','#4C71B5'],['Sport Dark Navy','#003f77'],['Sport Orange','#F9430A']]},
+ {sku:'67212',img:'Asi338355528',cat:'Women',name:"Women's Micropique Sport-Wick Polo",brand:'Sport-Tek',sizes:S('XS','4XL'),colors:[['Black','#000000'],['True Royal','#0038a8'],['Deep Orange','#FA6908'],['Purple','#4f0093'],['Iron Grey','#3F4249']]},
+ {sku:'74377',img:'Asi346910502',cat:'Women',name:"Women's CVC Relaxed T-Shirt",brand:'Next Level',sizes:S('XS','3XL'),colors:[['Black','#000000'],['White','#FFFFFF'],['Charcoal','#615B5B']]},
+ {sku:'52679',img:'Asi308317107',cat:'Men',name:"Men's Digi Stripe Fleece Jacket",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Black','#000000'],['Grey','#929397'],['Navy','#1f2a44']]},
+ {sku:'65294',img:'Asi308320150',cat:'Men',name:"Men's Collective Insulated Vest",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Deep Black','#000000'],['Graphite','#676B6E'],['Gusty Grey','#A4ADB2']]},
+ {sku:'62944',img:'Asi334684661',cat:'Men',name:"Men's Zone Performance Quarter-Zip",brand:'Team 365',sizes:S('XS','4XL'),colors:[['Black','#000000'],['Sport Graphite','#878B8F'],['Sport Light Blue','#05C5F5'],['Sport Royal','#4C71B5'],['Sport Dark Navy','#003f77'],['Sport Orange','#F9430A']]},
+ {sku:'52606',img:'Asi339825109',cat:'Men',name:"Men's Micropique Sport-Wick Polo",brand:'Sport-Tek',sizes:S('XS','6XL'),colors:[['Black','#000000'],['True Royal','#4169E1'],['Deep Orange','#E36630'],['Purple','#4B0082'],['Iron Grey','#3F4249']]},
+ {sku:'72344',img:'Asi301812822',cat:'Unisex',name:'Bahama Performance Hooded Long Sleeve T-Shirt',brand:'Paragon',sizes:S('XS','4XL'),colors:[['Black','#000000'],['Navy','#1f2a5c'],['Graphite','#676B6E'],['Neon Orange','#FF6149'],['Safety Green','#C6F000'],['Blue Mist','#99d6dd'],['Royal','#4169E1']]},
+ {sku:'52615',img:'Asi353423188',cat:'Unisex',name:'Core Fleece Pullover Hooded Sweatshirt',brand:'Port & Company',sizes:S('S','4XL'),colors:[['Jet Black','#030000'],['Orange','#FF8C24'],['Navy','#000080'],['True Royal','#1624C4'],['Medium Grey','#929397']]},
+ {sku:'66855',img:'Asi342394567',cat:'Unisex',name:'Fan Favorite Fleece Crewneck Sweatshirt',brand:'Port & Company',sizes:S('XS','4XL'),colors:[['Charcoal','#615B5B'],['Jet Black','#000000'],['Team Navy','#244879'],['True Royal','#0000FF']]},
+ {sku:'68115',img:'Asi333629563',cat:'Unisex',name:'Essential Rain Jacket',brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Deep Black','#000000'],['Graphite','#676B6E'],['True Navy','#002868']]},
+ {sku:'75798',img:'Asi334594364',cat:'Unisex',name:'Capital Long Sleeve Performance T-Shirt',brand:'CORE365',sizes:S('XS','6XL'),colors:[['Black','#000000'],['Classic Navy','#244879'],['True Royal','#314DC4'],['Carbon','#797D83']]},
+ {sku:'75797',img:'Asi343953762',cat:'Unisex',name:'Capital Performance T-Shirt',brand:'CORE365',sizes:S('XS','6XL'),colors:[['Black','#000000'],['Classic Navy','#244879'],['True Royal','#314DC4'],['Campus Orange','#E36630'],['Carbon','#797D83']]}
 ];
 const BY_SKU = Object.fromEntries(PRODUCTS.map(p=>[p.sku,p]));
 const CATS = ['All','Women','Men','Unisex'];
@@ -219,6 +224,7 @@ function productHTML(p){
   const col=activeColor[p.sku]||null;
   let body='';
   if(open){
+    body += `<div class="photo"><img src="${IMG(p.img,300)}" alt="${esc(p.name)}" onerror="this.parentNode.style.display='none'"><div class="cap">Reference photo. Color shown may not be one we're offering.</div></div>`;
     body += `<div class="step">1 · Choose a color</div><div class="colors">` +
       p.colors.map(([c,h],i)=>{ const cn=qtyFor(p.sku,c);
         return `<button class="chip${c===col?' on':''}" onclick="pickColor('${p.sku}',${i})"><span class="dot" style="background:${h}"></span>${esc(c)}${cn?`<span class="n">${cn}</span>`:''}</button>`;}).join('') + `</div>`;
@@ -231,6 +237,7 @@ function productHTML(p){
   }
   return `<div class="prod${open?' open':''}${n?' has':''}" id="p_${p.sku}">
     <button class="phead" onclick="toggle('${p.sku}')" aria-expanded="${open}">
+      <img class="thumb" src="${IMG(p.img,150)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
       <div class="meta"><div class="pname">${esc(p.name)}</div><div class="psub">${esc(p.brand)} · ${p.sizes[0]}–${p.sizes[p.sizes.length-1]}</div>
       <div class="dots">${p.colors.map(([c,h])=>`<span class="dot" title="${esc(c)}" style="background:${h}"></span>`).join('')}</div></div>
       ${n?`<span class="badge">${n} selected</span>`:''}<span class="chev">&#8250;</span>
