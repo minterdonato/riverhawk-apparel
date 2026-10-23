@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Riverhawk 2026 Fall Apparel Order</title>
+<style>
+:root{
+  --o100:#FFF0E6;--o200:#FFD3B5;--o500:#FF7214;--o700:#C24E00;--o900:#5C2500;
+  --g50:#FAFAFA;--g100:#F4F4F5;--g200:#E7E7EA;--g300:#D4D4D8;--g500:#71717A;--g700:#3F3F46;--g900:#18181B;
+  --green100:#E6F0DC;--green700:#3F5A27;--pink500:#D63A6B;--pink100:#FBE3EB;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--g100);color:var(--g900);font-size:16px;line-height:1.4;padding-bottom:110px}
+.top{background:var(--g900);color:#fff;padding:14px 16px}
+.top .brand{font-weight:800;letter-spacing:.02em;font-size:15px}
+.top .brand span{color:var(--o500)}
+.top h1{margin:4px 0 0;font-size:22px;font-weight:700}
+.notice{background:var(--o500);color:#fff;font-size:13px;padding:8px 16px}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+.card{background:#fff;border:1px solid var(--g200);border-radius:var(--radius);padding:16px;margin-bottom:14px}
+.intro p{margin:0 0 8px}
+.intro ul{margin:6px 0 0;padding-left:20px}
+label.lbl{display:block;font-weight:600;margin-bottom:6px}
+input[type=text],textarea{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--g300);border-radius:10px;background:#fff}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--o500);box-shadow:0 0 0 3px var(--o100)}
+.req{color:var(--pink500)}
+.err{color:var(--pink500);font-size:13px;margin-top:6px;display:none}
+.tabs{display:flex;gap:8px;overflow-x:auto;margin:6px 0 12px;padding-bottom:2px}
+.tab{border:1px solid var(--g300);background:#fff;border-radius:999px;padding:8px 16px;font:inherit;font-size:14px;font-weight:600;color:var(--g700);cursor:pointer;white-space:nowrap}
+.tab.on{background:var(--o500);border-color:var(--o500);color:#fff}
+h2.sec{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--g500);margin:18px 2px 8px}
+.prod{background:#fff;border:1px solid var(--g200);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
+.prod.has{border-color:var(--o500);box-shadow:0 0 0 1px var(--o500)}
+.phead{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;width:100%;background:none;border:0;font:inherit;text-align:left;color:inherit}
+.phead .meta{flex:1;min-width:0}
+.pname{font-weight:700}
+.psub{font-size:13px;color:var(--g500);margin-top:2px}
+.dots{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap}
+.dot{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.18)}
+.badge{background:var(--o500);color:#fff;border-radius:999px;font-size:12px;font-weight:700;padding:3px 9px;white-space:nowrap}
+.chev{color:var(--g500);transition:transform .2s;font-size:18px}
+.prod.open .chev{transform:rotate(90deg)}
+.pbody{display:none;border-top:1px solid var(--g200);padding:14px 16px;background:var(--g50)}
+.prod.open .pbody{display:block}
+.step{font-size:13px;font-weight:700;color:var(--g700);margin:0 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.colors{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{display:flex;align-items:center;gap:8px;border:1px solid var(--g300);background:#fff;border-radius:999px;padding:7px 12px 7px 8px;font:inherit;font-size:14px;cursor:pointer;color:var(--g900)}
+.chip .dot{width:18px;height:18px}
+.chip.on{border-color:var(--o500);background:var(--o100);box-shadow:0 0 0 1px var(--o500);font-weight:600}
+.chip .n{background:var(--o500);color:#fff;border-radius:999px;font-size:11px;padding:1px 7px;font-weight:700}
+.sizes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.srow{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--g200);border-radius:10px;padding:6px 6px 6px 12px}
+.srow.has{border-color:var(--o500);background:var(--o100)}
+.srow b{font-size:15px}
+.stp{display:flex;align-items:center;gap:4px}
+.stp button{width:36px;height:36px;border-radius:8px;border:1px solid var(--g300);background:#fff;font-size:20px;line-height:1;cursor:pointer;color:var(--g900)}
+.stp button:disabled{opacity:.35;cursor:default}
+.stp span{min-width:22px;text-align:center;font-weight:700}
+.hint{font-size:13px;color:var(--g500);margin-top:10px}
+.lines{list-style:none;margin:0;padding:0}
+.lines li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--g200)}
+.lines li:last-child{border-bottom:0}
+.lines .t{flex:1;min-width:0;font-size:14px}
+.lines .t b{display:block;font-size:15px}
+.rm{border:1px solid var(--g300);background:#fff;border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer;color:var(--g700)}
+.fee{background:var(--o100);border:1px solid var(--o200);color:var(--o900);border-radius:10px;padding:10px 12px;font-size:14px;margin-top:12px}
+.ack{display:flex;gap:10px;align-items:flex-start;margin-top:10px;font-size:14px}
+.ack input{width:20px;height:20px;margin-top:1px;accent-color:var(--o500)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;padding:13px 18px;font:inherit;font-weight:700;cursor:pointer}
+.btn.pri{background:var(--o500);color:#fff}
+.btn.pri:hover{background:var(--o700)}
+.btn.pri:disabled{background:var(--g300);color:var(--g500);cursor:default}
+.btn.ghost{background:transparent;border:1px solid var(--g300);color:var(--g700)}
+.full{width:100%}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--g200);box-shadow:0 -4px 16px rgba(0,0,0,.06);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+.bar .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.bar .sum{flex:1;font-size:14px;line-height:1.3}
+.bar .sum b{font-size:16px}
+.bar .sum .x{color:var(--o700);font-weight:600}
+.empty{color:var(--g500);font-size:14px}
+.done{text-align:center;padding:28px 16px}
+.done .ok{width:64px;height:64px;border-radius:50%;background:var(--green100);color:var(--green700);font-size:34px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--g900);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:50;max-width:90vw;text-align:center}
+.toast.show{opacity:1}
+footer{max-width:760px;margin:10px auto 0;padding:0 16px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--g500)}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">RIVERHAWK <span>INDUSTRIAL SUPPLY</span></div>
+  <h1>2026 Fall Apparel Order</h1>
+</header>
+<div class="notice">Pick up to 3 items at no cost · Extra items are $10 each</div>
+
+<main class="wrap" id="formView">
+  <section class="card intro">
+    <p><b>How it works</b></p>
+    <ul>
+      <li>Open a product, choose a color, then tap <b>+</b> next to your size.</li>
+      <li>You can choose more than one color or size of the same product.</li>
+      <li>Your first <b>3 items</b> are covered. Each item after that is <b>$10</b>.</li>
+      <li>Questions? Reach out to Micah.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <label class="lbl" for="empName">Your full name <span class="req">*</span></label>
+    <input type="text" id="empName" autocomplete="name" maxlength="80" placeholder="First and last name">
+    <div class="err" id="nameErr">Please enter your first and last name.</div>
+  </section>
+
+  <div class="tabs" id="tabs"></div>
+  <div id="catalog"></div>
+
+  <section class="card" id="review">
+    <h2 class="sec" style="margin-top:0">Your order</h2>
+    <ul class="lines" id="lines"></ul>
+    <div class="empty" id="emptyMsg">Nothing selected yet. Open a product above to add items.</div>
+    <div class="fee hidden" id="feeBox"></div>
+    <label class="ack hidden" id="ackRow"><input type="checkbox" id="ack"> <span id="ackText"></span></label>
+    <div style="margin-top:14px">
+      <label class="lbl" for="notes">Notes (optional)</label>
+      <textarea id="notes" rows="2" maxlength="500" placeholder="Anything Micah should know"></textarea>
+    </div>
+    <div class="err" id="subErr"></div>
+    <button class="btn pri full" id="submitBtn" style="margin-top:14px" onclick="submitOrder()">Submit order</button>
+  </section>
+</main>
+
+<main class="wrap hidden" id="doneView">
+  <section class="card done">
+    <div class="ok">&#10003;</div>
+    <h2 style="margin:0 0 6px">Order submitted</h2>
+    <p style="margin:0;color:var(--g500)" id="doneWho"></p>
+  </section>
+  <section class="card">
+    <h2 class="sec" style="margin-top:0">What you ordered</h2>
+    <ul class="lines" id="doneLines"></ul>
+    <div class="fee hidden" id="doneFee"></div>
+    <p class="hint">Screenshot this page for your records. If you need to make a change, contact Micah. Please don't submit a second order to change this one.</p>
+    <button class="btn ghost full" onclick="startOver()">Submit another order (for someone else)</button>
+  </section>
+</main>
+
+<div class="bar" id="bar">
+  <div class="in">
+    <div class="sum" id="barSum"></div>
+    <button class="btn pri" onclick="goReview()">Review</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<footer><span>Riverhawk Industrial Supply · internal order form · <span id="ver"></span></span><span>More than just a supplier.</span></footer>
+<script>
+const APP_VERSION = 'v1.0';
+const SEASON = '2026 Fall';
+const SB_URL = 'https://yxejpzbsbwfovpumpjlw.supabase.co/rest/v1/apo_orders';
+const SB_KEY = 'sb_publishable_TXRcm05g4VHVX2Zews28hA_8D4L3HED';
+const FREE_ITEMS = 3, EXTRA_FEE = 10, MAX_PER_LINE = 10, MAX_TOTAL = 25;
+const S = (a,b) => { const all=['XS','S','M','L','XL','2XL','3XL','4XL','5XL','6XL']; return all.slice(all.indexOf(a), all.indexOf(b)+1); };
+
+// sku = Shop Madden catalog SKU
+const PRODUCTS = [
+ {sku:'52832',cat:'Women',name:"Women's Heather Microfleece Full-Zip Jacket",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Black Charcoal Heather','#4a4646'],['Light Royal Heather','#4169E1'],['Pearl Grey Heather','#9a9a9a']]},
+ {sku:'65272',cat:'Women',name:"Women's Collective Insulated Vest",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Deep Black','#000000'],['Graphite','#676B6E'],['White','#FFFFFF']]},
+ {sku:'62945',cat:'Women',name:"Women's Zone Performance Quarter-Zip",brand:'Team 365',sizes:S('XS','3XL'),colors:[['Black','#000000'],['Sport Graphite','#878B8F'],['Sport Light Blue','#05C5F5'],['Sport Royal','#4C71B5'],['Sport Dark Navy','#003f77'],['Sport Orange','#F9430A']]},
+ {sku:'67212',cat:'Women',name:"Women's Micropique Sport-Wick Polo",brand:'Sport-Tek',sizes:S('XS','4XL'),colors:[['Black','#000000'],['True Royal','#0038a8'],['Deep Orange','#FA6908'],['Purple','#4f0093'],['Iron Grey','#3F4249']]},
+ {sku:'74377',cat:'Women',name:"Women's CVC Relaxed T-Shirt",brand:'Next Level',sizes:S('XS','3XL'),colors:[['Black','#000000'],['White','#FFFFFF'],['Charcoal','#615B5B']]},
+ {sku:'52679',cat:'Men',name:"Men's Digi Stripe Fleece Jacket",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Black','#000000'],['Grey','#929397'],['Navy','#1f2a44']]},
+ {sku:'65294',cat:'Men',name:"Men's Collective Insulated Vest",brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Deep Black','#000000'],['Graphite','#676B6E'],['Gusty Grey','#A4ADB2']]},
+ {sku:'62944',cat:'Men',name:"Men's Zone Performance Quarter-Zip",brand:'Team 365',sizes:S('XS','4XL'),colors:[['Black','#000000'],['Sport Graphite','#878B8F'],['Sport Light Blue','#05C5F5'],['Sport Royal','#4C71B5'],['Sport Dark Navy','#003f77'],['Sport Orange','#F9430A']]},
+ {sku:'52606',cat:'Men',name:"Men's Micropique Sport-Wick Polo",brand:'Sport-Tek',sizes:S('XS','6XL'),colors:[['Black','#000000'],['True Royal','#4169E1'],['Deep Orange','#E36630'],['Purple','#4B0082'],['Iron Grey','#3F4249']]},
+ {sku:'72344',cat:'Unisex',name:'Bahama Performance Hooded Long Sleeve T-Shirt',brand:'Paragon',sizes:S('XS','4XL'),colors:[['Black','#000000'],['Navy','#1f2a5c'],['Graphite','#676B6E'],['Neon Orange','#FF6149'],['Safety Green','#C6F000'],['Blue Mist','#99d6dd'],['Royal','#4169E1']]},
+ {sku:'52615',cat:'Unisex',name:'Core Fleece Pullover Hooded Sweatshirt',brand:'Port & Company',sizes:S('S','4XL'),colors:[['Jet Black','#030000'],['Orange','#FF8C24'],['Navy','#000080'],['True Royal','#1624C4'],['Medium Grey','#929397']]},
+ {sku:'66855',cat:'Unisex',name:'Fan Favorite Fleece Crewneck Sweatshirt',brand:'Port & Company',sizes:S('XS','4XL'),colors:[['Charcoal','#615B5B'],['Jet Black','#000000'],['Team Navy','#244879'],['True Royal','#0000FF']]},
+ {sku:'68115',cat:'Unisex',name:'Essential Rain Jacket',brand:'Port Authority',sizes:S('XS','4XL'),colors:[['Deep Black','#000000'],['Graphite','#676B6E'],['True Navy','#002868']]},
+ {sku:'75798',cat:'Unisex',name:'Capital Long Sleeve Performance T-Shirt',brand:'CORE365',sizes:S('XS','6XL'),colors:[['Black','#000000'],['Classic Navy','#244879'],['True Royal','#314DC4'],['Carbon','#797D83']]},
+ {sku:'75797',cat:'Unisex',name:'Capital Performance T-Shirt',brand:'CORE365',sizes:S('XS','6XL'),colors:[['Black','#000000'],['Classic Navy','#244879'],['True Royal','#314DC4'],['Campus Orange','#E36630'],['Carbon','#797D83']]}
+];
+const BY_SKU = Object.fromEntries(PRODUCTS.map(p=>[p.sku,p]));
+const CATS = ['All','Women','Men','Unisex'];
+
+let cart = {};            // key sku|color|size -> qty
+let activeColor = {};     // sku -> color name
+let openSku = null, activeCat = 'All', submitting = false;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const keyOf = (sku,c,s) => sku+'|'+c+'|'+s;
+function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove('show'),2400); }
+
+function totals(){
+  let total=0; for(const k in cart) total+=cart[k];
+  const extra=Math.max(0,total-FREE_ITEMS);
+  return {total, extra, fee: extra*EXTRA_FEE};
+}
+function qtyFor(sku, color){ let n=0; for(const k in cart){ const [s,c]=k.split('|'); if(s===sku && (color==null || c===color)) n+=cart[k]; } return n; }
+
+function renderTabs(){
+  $('tabs').innerHTML = CATS.map(c=>`<button class="tab${c===activeCat?' on':''}" onclick="setCat('${c}')">${c==='All'?'All products':(c==='Unisex'?'Unisex':c+"'s")}</button>`).join('');
+}
+function setCat(c){ activeCat=c; renderTabs(); renderCatalog(); }
+
+function renderCatalog(){
+  let html='';
+  for(const cat of CATS.slice(1)){
+    if(activeCat!=='All' && activeCat!==cat) continue;
+    html += `<h2 class="sec">${cat==='Unisex'?'Unisex':cat+"'s"}</h2>`;
+    for(const p of PRODUCTS.filter(x=>x.cat===cat)) html += productHTML(p);
+  }
+  $('catalog').innerHTML = html;
+}
+function productHTML(p){
+  const n=qtyFor(p.sku), open=openSku===p.sku;
+  const col=activeColor[p.sku]||null;
+  let body='';
+  if(open){
+    body += `<div class="step">1 · Choose a color</div><div class="colors">` +
+      p.colors.map(([c,h],i)=>{ const cn=qtyFor(p.sku,c);
+        return `<button class="chip${c===col?' on':''}" onclick="pickColor('${p.sku}',${i})"><span class="dot" style="background:${h}"></span>${esc(c)}${cn?`<span class="n">${cn}</span>`:''}</button>`;}).join('') + `</div>`;
+    if(col){
+      body += `<div class="step">2 · Choose size &amp; quantity (${esc(col)})</div><div class="sizes">` +
+        p.sizes.map(s=>{ const q=cart[keyOf(p.sku,col,s)]||0;
+          return `<div class="srow${q?' has':''}"><b>${s}</b><div class="stp"><button aria-label="Remove one ${s}" ${q?'':'disabled'} onclick="bump('${p.sku}','${s}',-1)">&minus;</button><span>${q}</span><button aria-label="Add one ${s}" onclick="bump('${p.sku}','${s}',1)">+</button></div></div>`;}).join('') + `</div>`;
+      body += `<div class="hint">Want another color too? Tap a different color above. Your selections are kept.</div>`;
+    } else body += `<div class="hint">Pick a color to see sizes.</div>`;
+  }
+  return `<div class="prod${open?' open':''}${n?' has':''}" id="p_${p.sku}">
+    <button class="phead" onclick="toggle('${p.sku}')" aria-expanded="${open}">
+      <div class="meta"><div class="pname">${esc(p.name)}</div><div class="psub">${esc(p.brand)} · ${p.sizes[0]}–${p.sizes[p.sizes.length-1]}</div>
+      <div class="dots">${p.colors.map(([c,h])=>`<span class="dot" title="${esc(c)}" style="background:${h}"></span>`).join('')}</div></div>
+      ${n?`<span class="badge">${n} selected</span>`:''}<span class="chev">&#8250;</span>
+    </button>
+    <div class="pbody">${body}</div></div>`;
+}
+function toggle(sku){
+  openSku = openSku===sku ? null : sku;
+  const p=BY_SKU[sku];
+  if(openSku && !activeColor[sku] && p.colors.length===1) activeColor[sku]=p.colors[0][0];
+  renderCatalog();
+  if(openSku){ const el=$('p_'+sku); if(el) el.scrollIntoView({block:'nearest',behavior:'smooth'}); }
+}
+function pickColor(sku,i){ activeColor[sku]=BY_SKU[sku].colors[i][0]; renderCatalog(); }
+function bump(sku,size,d){
+  const c=activeColor[sku]; if(!c) return;
+  const k=keyOf(sku,c,size), cur=cart[k]||0, t=totals().total;
+  if(d>0 && cur>=MAX_PER_LINE){ toast(`Max ${MAX_PER_LINE} per size/color`); return; }
+  if(d>0 && t>=MAX_TOTAL){ toast(`Max ${MAX_TOTAL} items per order`); return; }
+  const nv=Math.max(0,cur+d); if(nv) cart[k]=nv; else delete cart[k];
+  if(d>0 && t+1===FREE_ITEMS+1) toast(`Heads up: items after ${FREE_ITEMS} are $${EXTRA_FEE} each`);
+  renderAll();
+}
+function removeLine(k){ delete cart[k]; renderAll(); }
+
+function sortedLines(){
+  const order=Object.fromEntries(PRODUCTS.map((p,i)=>[p.sku,i]));
+  return Object.keys(cart).map(k=>{const [sku,color,size]=k.split('|'); return {k,sku,color,size,qty:cart[k]};})
+    .sort((a,b)=>order[a.sku]-order[b.sku] || a.color.localeCompare(b.color) || BY_SKU[a.sku].sizes.indexOf(a.size)-BY_SKU[b.sku].sizes.indexOf(b.size));
+}
+function lineHTML(l, removable){
+  const p=BY_SKU[l.sku];
+  return `<li><div class="t"><b>${esc(p.name)}</b>${esc(l.color)} · ${l.size} · Qty ${l.qty}</div>${removable?`<button class="rm" onclick="removeLine('${esc(l.k)}')">Remove</button>`:''}</li>`;
+}
+function feeText(t){ return `You've selected <b>${t.total} items</b>. ${FREE_ITEMS} are covered, and <b>${t.extra} extra × $${EXTRA_FEE} = $${t.fee}</b>.`; }
+
+function renderReview(){
+  const ls=sortedLines(), t=totals();
+  $('lines').innerHTML = ls.map(l=>lineHTML(l,true)).join('');
+  $('emptyMsg').classList.toggle('hidden', ls.length>0);
+  $('feeBox').classList.toggle('hidden', !t.extra);
+  $('ackRow').classList.toggle('hidden', !t.extra);
+  if(t.extra){ $('feeBox').innerHTML=feeText(t); $('ackText').textContent=`I understand I'll owe $${t.fee} for ${t.extra} extra item${t.extra>1?'s':''}.`; }
+  else $('ack').checked=false;
+  $('submitBtn').disabled = !ls.length || submitting;
+}
+function renderBar(){
+  const t=totals();
+  $('barSum').innerHTML = t.total
+    ? `<b>${t.total} item${t.total>1?'s':''}</b> selected<br>${t.extra?`<span class="x">${t.extra} extra · $${t.fee}</span>`:`${FREE_ITEMS-t.total} free item${FREE_ITEMS-t.total===1?'':'s'} left`}`
+    : `<b>0 items</b> selected<br>Up to ${FREE_ITEMS} free`;
+}
+function renderAll(){ renderCatalog(); renderReview(); renderBar(); }
+function goReview(){ $('review').scrollIntoView({behavior:'smooth',block:'start'}); }
+
+async function submitOrder(){
+  if(submitting) return;
+  const err=$('subErr'); err.style.display='none';
+  const name=$('empName').value.trim().replace(/\s+/g,' ');
+  if(name.length<3 || !name.includes(' ')){ $('nameErr').style.display='block'; $('empName').focus(); $('empName').scrollIntoView({block:'center',behavior:'smooth'}); return; }
+  $('nameErr').style.display='none';
+  const ls=sortedLines(), t=totals();
+  if(!ls.length){ err.textContent='Add at least one item.'; err.style.display='block'; return; }
+  if(t.extra && !$('ack').checked){ err.textContent='Please check the box to confirm the extra item fee.'; err.style.display='block'; return; }
+  const items=ls.map(l=>{const p=BY_SKU[l.sku]; return {sku:l.sku,product:p.name,brand:p.brand,category:p.cat,color:l.color,size:l.size,qty:l.qty};});
+  const notes=$('notes').value.trim();
+  const body={season:SEASON,employee_name:name,items,total_qty:t.total,extra_qty:t.extra,extra_fee:t.fee,notes:notes||null,app_version:APP_VERSION};
+  submitting=true; const b=$('submitBtn'); b.disabled=true; b.textContent='Submitting…';
+  try{
+    const r=await fetch(SB_URL,{method:'POST',headers:{'apikey':SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(body)});
+    if(!r.ok) throw new Error('HTTP '+r.status+' '+(await r.text()).slice(0,200));
+    showDone(name, ls, t);
+  }catch(e){
+    console.error(e);
+    err.textContent='Your order did not go through. Check your connection and try again. If it keeps failing, screenshot this page and send it to Micah.';
+    err.style.display='block'; toast('Submit failed');
+  }finally{ submitting=false; b.textContent='Submit order'; renderReview(); }
+}
+function showDone(name, ls, t){
+  $('doneWho').textContent = `Thanks, ${name}! Your order was received ${new Date().toLocaleString()}.`;
+  $('doneLines').innerHTML = ls.map(l=>lineHTML(l,false)).join('');
+  $('doneFee').classList.toggle('hidden', !t.extra);
+  if(t.extra) $('doneFee').innerHTML = `${t.extra} extra item${t.extra>1?'s':''}: <b>$${t.fee}</b> owed.`;
+  $('formView').classList.add('hidden'); $('bar').classList.add('hidden'); $('doneView').classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+function startOver(){
+  cart={}; activeColor={}; openSku=null; $('empName').value=''; $('notes').value=''; $('ack').checked=false;
+  $('doneView').classList.add('hidden'); $('formView').classList.remove('hidden'); $('bar').classList.remove('hidden');
+  renderAll(); window.scrollTo(0,0);
+}
+window.addEventListener('beforeunload', e=>{ if(Object.keys(cart).length && $('doneView').classList.contains('hidden')){ e.preventDefault(); e.returnValue=''; } });
+$('ver').textContent=APP_VERSION;
+renderTabs(); renderAll();
+</script>
+</body>
+</html>
